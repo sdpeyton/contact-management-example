@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-            
-            </div>
-        );
-    }
-}
+// layout
+import Navbar from './layout/navbar/Navbar';
+
+const App = () => (
+    <div className="App">
+        <Navbar />
+    </div>
+)
 
 export default App;
