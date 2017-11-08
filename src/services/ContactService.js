@@ -2,7 +2,7 @@ import { api_url } from '../config';
 
 const contacts_url = api_url + 'contacts';
 
-export const ContactService = {
+const ContactService = {
 
     contacts: null,
 
@@ -21,3 +21,5 @@ export const ContactService = {
         });
     }
 }
+
+export default ContactService;
