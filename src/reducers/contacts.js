@@ -10,6 +10,18 @@ let id = 0;
 const contacts = (state = [], action) => {
     switch (action.type) {
 
+        // inputs in the action are the type and a list of contacts, with
+        // the id being automatically generated.
+        case 'CONTACTS_ADD':
+            let contacts = action.contacts.map(contact => {
+                let new_contact = Object.assign({}, contact);
+                new_contact.id = id;
+                id++;
+                return new_contact;
+            });
+            // console.error([...state, ...contacts]);
+            return [...state, ...contacts];
+
         // inputs in the action are the type and the contact, with the id
         // being automatically generated
         case 'CONTACT_ADD':
