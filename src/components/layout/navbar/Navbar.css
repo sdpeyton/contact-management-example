@@ -1,0 +1,33 @@
+@value primary_color from '../../../variables.css';
+@value secondary_color from '../../../variables.css';
+@value navbar_height from '../../../variables.css';
+@value font_size_medium from '../../../variables.css';
+
+#navbar {
+    font-size: font_size_medium;
+    height: navbar_height;
+    width: 100%;
+    top: 0;
+    padding: 0 1rem;
+    background: primary_color;
+    position: fixed;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navbar-links {
+    margin-right: 2rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin: 1rem;
+}
+
+a:hover {
+    color: secondary_color;
+}
+

@@ -1,0 +1,20 @@
+@value primary_color from '../../variables.css';
+@value secondary_color from '../../variables.css';
+@value font_size_large from '../../variables.css';
+
+.title {
+    border: 2px solid primary_color;
+    border-radius: 50%;
+    padding: 4rem;
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+    margin: auto;
+    margin-top: 10rem;
+    text-align: center;
+}
+
+h3 {
+    color: primary_color;
+    font-size: font_size_large;
+}

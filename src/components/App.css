@@ -1,0 +1,5 @@
+@value navbar_height from '../variables.css';
+
+#page-wrapper {
+    margin-top: navbar_height;
+}

@@ -1,3 +1,8 @@
-
 @value primary_color: #283593;
 @value secondary_color: #ff4081;
+
+@value font_size_small: 1rem;
+@value font_size_medium: 1.5rem;
+@value font_size_large: 2rem;
+
+@value navbar_height: 4rem;
