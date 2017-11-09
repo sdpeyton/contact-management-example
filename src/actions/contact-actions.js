@@ -22,3 +22,7 @@ export const remove_contact = id => (
 export const update_contact = contact => (
     { type: 'CONTACT_UPDATE', contact }
 );
+
+export const sort_contacts = sort_by => (
+    { type: 'CONTACTS_SORT', sort_by }
+)

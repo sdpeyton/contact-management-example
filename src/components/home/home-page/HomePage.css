@@ -1,6 +1,6 @@
-@value primary_color from '../../variables.css';
-@value secondary_color from '../../variables.css';
-@value font_size_large from '../../variables.css';
+@value primary_color from '../../../variables.css';
+@value secondary_color from '../../../variables.css';
+@value font_size_large from '../../../variables.css';
 
 .title {
     border: 2px solid primary_color;

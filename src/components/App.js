@@ -4,8 +4,8 @@ import createHistory from 'history/createBrowserHistory';
 import './App.css';
 
 import Navbar from './layout/navbar/Navbar';
-import HomePage from './home/HomePage';
-import ContactsPage from './contacts/ContactsPage';
+import HomePage from './home/home-page/HomePage';
+import ContactsPage from './contacts/contacts-page/ContactsPage';
 
 let history = createHistory();
 

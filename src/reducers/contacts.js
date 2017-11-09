@@ -25,7 +25,7 @@ const contacts = (state = [], action) => {
         // inputs in the action are the type and the contact, with the id
         // being automatically generated
         case 'CONTACT_ADD':
-            let contact = Object.assign({}, action.contact);
+            var contact = Object.assign({}, action.contact);
             contact.id = id;
             id++;
             return [ ...state, contact];
@@ -45,6 +45,11 @@ const contacts = (state = [], action) => {
             var contact_index = _.findIndex(contacts, contact => contact.id === action.contact.id);
             contacts.splice(contact_index, 1, action.contact);
             return contacts;
+
+        // inputs in the action are the type and the field to sort the list
+        // of contacts by
+        case 'CONTACTS_SORT':
+            return _.sortBy(state, contact => contact[action.sort_by]);
 
         default:
             return state;
