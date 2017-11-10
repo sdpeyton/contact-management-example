@@ -21,7 +21,8 @@
     "start": "parallelshell 'node server/server.js' 'react-scripts start'",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-server-only": "node server/server.js"
   },
   "devDependencies": {
     "http-server": "^0.10.0"

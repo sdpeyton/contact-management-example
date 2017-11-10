@@ -1,3 +1,23 @@
+This is a basic example of a contact management CRUD application built using React/Redux
+
+In order to run the application, please follow these steps:
+
+1. Clone the repository using ```git clone https://github.com/sdpeyton/contact-management-example.git```.
+
+2. Run ```npm install``` to install dependencies.
+
+3. To view the application in dev, run ```npm start```. This will start a node server to generate a crude api for contacts and a react application in parallel.
+
+4. To obtain a production version of the application, run ```npm run build```.
+
+5. To view the production version locally (for testing), run ```npm start-server-only``` to start the api and ```http-server``` to start the front-end application on port 8080. Please note that running the application in production will require a re-implementation of the api.
+
+Instructions:
+
+
+
+Below is the standard information provided with a project bootstrapped with Create React App.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
