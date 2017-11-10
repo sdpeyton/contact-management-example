@@ -6,3 +6,8 @@
 @value font_size_large: 2rem;
 
 @value navbar_height: 4rem;
+
+@value contact_id_width: 5rem;
+@value contact_name_width: 10rem;
+@value contact_email_width: 20rem;
+@value contact_phone_width: 12rem;

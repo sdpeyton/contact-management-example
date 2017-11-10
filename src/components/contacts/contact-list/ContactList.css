@@ -1,0 +1,52 @@
+@value primary_color from '../../../variables.css';
+@value contact_id_width from '../../../variables.css';
+@value contact_name_width from '../../../variables.css';
+@value contact_email_width from '../../../variables.css';
+@value contact_phone_width from '../../../variables.css';
+
+#contact-list {
+    position: relative;
+    margin: auto;
+    width: calc(contact_id_width + contact_name_width + contact_name_width + contact_email_width + contact_phone_width);
+    max-width: 1100px;
+}
+
+#contact-list-header {
+    font-weight: bold;
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1px solid primary_color;
+}
+
+.id {
+    width: contact_id_width;
+}
+
+.first-name, .last-name {
+    width: contact_name_width;
+}
+
+.email {
+    width: contact_email_width;
+}
+
+.phone {
+    width: contact_phone_width;
+}
+
+#contact-sort {
+    text-align: center;
+}
+
+#contact-sort p {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+#contact-sort select {
+    display: inline-block;
+    margin: 0 1rem;
+    background: white;
+    border: 1px solid primary_color;
+    padding: .5rem;
+}

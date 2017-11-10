@@ -5,7 +5,7 @@ import ContactList from '../contact-list/ContactList';
 
 const ContactsPage = () => (
     <div id='contacts-page'>
-        <h3>Show me some contacts!</h3>
+        <p id='contacts-title'>Contacts Administation</p>
         <ContactList />
     </div>
 );

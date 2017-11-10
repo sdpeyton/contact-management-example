@@ -25,4 +25,4 @@ export const update_contact = contact => (
 
 export const sort_contacts = sort_by => (
     { type: 'CONTACTS_SORT', sort_by }
-)
+);

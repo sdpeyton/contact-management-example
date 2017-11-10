@@ -5,6 +5,7 @@ import _ from 'underscore';
 
 import './ContactList.css';
 import { sort_contacts } from '../../../actions/contact-actions';
+import Contact from '../contact/Contact';
 
 // this list of sorting options should come from an api endpoint
 // or a config file, but I'm hardcoding it here to save time
@@ -15,26 +16,33 @@ const sort_options = [
     { name: 'Email', value: 'email' }, 
     { name: 'Phone Number', value: 'phone_number' }
 ];
-const sort_by = event => {
-    console.error(event);
-    // return event.target.value;
-}
+const sort_by = event => sort_contacts(event.target.value);
 
-const mapStateToProps = state => ({ contacts: state.contacts, sort_by });
-const mapDispatchToProps = dispatch => ({ on_sort_by: dispatch(sort_by) });
+const mapStateToProps = state => ({ contacts: state.contacts });
+const mapDispatchToProps = dispatch => ({ sort_by: event => dispatch(sort_by(event)) });
 
-const ContactListPresentation = ({ contacts, on_sort_by }) => (
-    <div id='contacts-list'>
-        <select onChange={event => on_sort_by(event)}>
-            {
-                sort_options.map(option => {
-                    return <option value={option.value}>{option.name}</option>
-                })
-            }
-        </select>
+const ContactListPresentation = ({ contacts, sort_by }) => (
+    <div id='contact-list'>
+        <div id='contact-sort'>
+            <p>Sort Contacts</p>
+            <select onChange={event => sort_by(event)}>
+                {
+                    sort_options.map(option => {
+                        return <option value={option.value}>{option.name}</option>
+                    })
+                }
+            </select>
+        </div>
+        <div id='contact-list-header'>
+            <p className='id'>Id</p>
+            <p className='first-name'>First Name</p>
+            <p className='last-name'>Last Name</p>
+            <p className='email'>Email</p>
+            <p className='phone'>Phone</p>
+        </div>
         {
             contacts.map(contact => {
-                return <h3>{contact.first_name}</h3>
+                return <Contact contact={contact} />
             })
         }
     </div>
@@ -42,7 +50,7 @@ const ContactListPresentation = ({ contacts, on_sort_by }) => (
 
 ContactListPresentation.propTypes = {
     contacts: PropTypes.array.isRequired,
-    sort_by
+    sort_by: PropTypes.func
 }
 
 const ContactList = connect(

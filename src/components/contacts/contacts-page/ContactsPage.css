@@ -1,0 +1,7 @@
+@value font_size_large from '../../../variables.css';
+
+#contacts-title {
+    padding: 1rem;
+    text-align: center;
+    font-size: font_size_large;
+}

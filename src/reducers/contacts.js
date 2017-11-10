@@ -8,6 +8,7 @@ let id = 0;
 // this is a reducer that handles state related to 
 // the list of contacts
 const contacts = (state = [], action) => {
+    console.error('got an action: ', action)
     switch (action.type) {
 
         // inputs in the action are the type and a list of contacts, with
@@ -49,6 +50,7 @@ const contacts = (state = [], action) => {
         // inputs in the action are the type and the field to sort the list
         // of contacts by
         case 'CONTACTS_SORT':
+            console.error('sorting contacts');
             return _.sortBy(state, contact => contact[action.sort_by]);
 
         default:
