@@ -33,12 +33,12 @@
     cursor: pointer;
 }
 
-#contact-save {
+#contact-save, #contact-add {
     border: 1px solid primary_color;
     color: primary_color;
 }
 
-#contact-save:hover {
+#contact-save:hover, #contact-add:hover {
     background: primary_color;
     color: white;
 }

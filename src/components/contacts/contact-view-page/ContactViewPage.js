@@ -3,19 +3,21 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './ContactViewPage.css';
-import { update_contact, remove_contact } from '../../../actions/contact-actions';
+import { add_contact, update_contact, remove_contact } from '../../../actions/contact-actions';
 import _ from 'underscore';
 
 const mapStateToProps = (state, props) => {
     let contact = _.find(state.contacts, contact => contact.id == props.id.match.params.id) || {};
-    return { contact };
+    return { contact, adding: props.adding };
 }
 
+const add_new_contact = contact => add_contact(contact);
 const save_contact = contact => update_contact(contact);
 const delete_contact = id => remove_contact(id);
 
 const mapDispatchToProps = dispatch => {
     return {
+        add_new_contact: contact => dispatch(add_new_contact(contact)),
         save_contact: contact => dispatch(save_contact(contact)),
         delete_contact: id => dispatch(delete_contact(id))
     }
@@ -39,6 +41,45 @@ class ContactViewPagePresentation extends Component {
     }
 
     render() {
+        let buttons;
+        if (this.props.adding) {
+            buttons = (
+                <div className='contact-view-option'>
+                    <Link to='/contacts'>
+                        <button 
+                            id='contact-add'
+                            className='contact-view-button'
+                            onClick={() => this.props.add_new_contact(this.state.contact)}
+                        >
+                            Add
+                        </button>
+                    </Link>
+                </div>
+            );
+        } else {
+            buttons = (
+                <div className='contact-view-option'>
+                    <Link to='/contacts'>
+                        <button 
+                            id='contact-save'
+                            className='contact-view-button'
+                            onClick={() => this.props.save_contact(this.state.contact)}
+                        >
+                            Save
+                        </button>
+                    </Link>
+                    <Link to='/contacts'>
+                        <button
+                            id='contact-delete'
+                            className='contact-view-button'
+                            onClick={() => this.props.delete_contact(this.state.contact.id)}
+                        >
+                            Remove
+                        </button>
+                    </Link>
+                </div>
+            );
+        }
         return (
             <div id='contact-view-page'>
                 <div className='contact-view-option'>
@@ -73,26 +114,7 @@ class ContactViewPagePresentation extends Component {
                         onChange={event => this.onChange(event, 'phone')}
                     />
                 </div>
-                <div className='contact-view-option'>
-                    <Link to='/contacts'>
-                        <button 
-                            id='contact-save'
-                            className='contact-view-button'
-                            onClick={() => this.props.save_contact(this.state.contact)}
-                        >
-                            Save
-                        </button>
-                    </Link>
-                    <Link to='/contacts'>
-                        <button
-                            id='contact-delete'
-                            className='contact-view-button'
-                            onClick={() => this.props.delete_contact(this.state.contact.id)}
-                        >
-                            Remove
-                        </button>
-                    </Link>
-                </div>
+                {buttons}
             </div>
         );
     }

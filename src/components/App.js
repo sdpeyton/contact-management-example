@@ -14,7 +14,7 @@ let history = createHistory();
 // of the page when you go to a new page
 history.listen((location, action) => window.scrollTo(0, 0));
 
-const ContactPage = id => <ContactViewPage id={id} />
+const ContactPage = id => <ContactViewPage id={id} adding={id.match.params.id === 'add'} />
 
 const App = () => (
     <div className="App">
