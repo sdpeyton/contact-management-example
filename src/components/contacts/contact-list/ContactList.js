@@ -13,8 +13,7 @@ const sort_options = [
     { name: 'Id', value: 'id' },
     { name: 'First Name', value: 'first_name' },
     { name: 'Last Name', value: 'last_name' },
-    { name: 'Email', value: 'email' }, 
-    { name: 'Phone Number', value: 'phone_number' }
+    { name: 'Email', value: 'email' }
 ];
 const sort_by = event => sort_contacts(event.target.value);
 

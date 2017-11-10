@@ -1,0 +1,50 @@
+@value primary_color from '../../../variables.css';
+@value secondary_color from '../../../variables.css';
+@value font_size_medium from '../../../variables.css';
+
+.contact-view-option {
+    position: relative;
+    margin: 1rem auto;
+    width: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+}
+
+.contact-view-option h3 {
+    font-size: font_size_medium;
+}
+
+.contact-view-option input {
+    padding: 1rem;
+    border: 1px solid primary_color;
+    font-size: font_size_small;
+    float: right;
+}
+
+.contact-view-button {
+    background: white;
+    padding: .5rem;
+    font-size: font_size_medium;
+    cursor: pointer;
+}
+
+#contact-save {
+    border: 1px solid primary_color;
+    color: primary_color;
+}
+
+#contact-save:hover {
+    background: primary_color;
+    color: white;
+}
+
+#contact-delete {
+    border: 1px solid secondary_color;
+    color: secondary_color;
+}
+
+#contact-delete:hover {
+    background: secondary_color;
+    color: white;
+}

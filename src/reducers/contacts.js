@@ -8,7 +8,6 @@ let id = 0;
 // this is a reducer that handles state related to 
 // the list of contacts
 const contacts = (state = [], action) => {
-    console.error('got an action: ', action)
     switch (action.type) {
 
         // inputs in the action are the type and a list of contacts, with

@@ -6,6 +6,7 @@ import './App.css';
 import Navbar from './layout/navbar/Navbar';
 import HomePage from './home/home-page/HomePage';
 import ContactsPage from './contacts/contacts-page/ContactsPage';
+import ContactViewPage from './contacts/contact-view-page/ContactViewPage';
 
 let history = createHistory();
 
@@ -13,8 +14,9 @@ let history = createHistory();
 // of the page when you go to a new page
 history.listen((location, action) => window.scrollTo(0, 0));
 
-const App = () => (
+const ContactPage = id => <ContactViewPage id={id} />
 
+const App = () => (
     <div className="App">
         <Router history={history}>
             <div>
@@ -22,8 +24,8 @@ const App = () => (
                 <div id='page-wrapper'>
                     <Switch>
                         <Route exact path='/' component={HomePage} />
-                        <Route path='/contacts' component={ContactsPage} />
-
+                        <Route exact path='/contacts' component={ContactsPage} />
+                        <Route path='/contacts/:id' render={ContactPage} />
                     </Switch>
                 </div>
             </div>

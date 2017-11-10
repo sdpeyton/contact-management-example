@@ -4,6 +4,11 @@
 @value contact_email_width from '../../../variables.css';
 @value contact_phone_width from '../../../variables.css';
 
+.contact-link {
+    color: black;
+    margin: 0;
+}
+
 .contact {
     border-bottom: 1px solid primary_color;
     padding: 1rem;

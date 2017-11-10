@@ -7,6 +7,10 @@ export const load_contacts = () => {
     }
 }
 
+export const get_contat = id => (
+    { type: 'CONTACT_GET', id }
+);
+
 export const add_contacts = contacts => (
     { type: 'CONTACTS_ADD', contacts }
 );
