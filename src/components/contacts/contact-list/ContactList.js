@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import _ from 'underscore';
 
 import './ContactList.css';
 import { sort_contacts } from '../../../actions/contact-actions';
 import Contact from '../contact/Contact';
+import ContactAddButton from '../contact-add-button/ContactAddButton';
 
 // this list of sorting options should come from an api endpoint
 // or a config file, but I'm hardcoding it here to save time
@@ -27,7 +29,14 @@ const ContactListPresentation = ({ contacts, sort_by }) => (
             <select onChange={event => sort_by(event)}>
                 {
                     sort_options.map(option => {
-                        return <option value={option.value}>{option.name}</option>
+                        return (
+                            <option
+                                key={option.value} 
+                                value={option.value}
+                            >
+                                {option.name}
+                            </option>
+                        );
                     })
                 }
             </select>
@@ -41,9 +50,17 @@ const ContactListPresentation = ({ contacts, sort_by }) => (
         </div>
         {
             contacts.map(contact => {
-                return <Contact contact={contact} />
+                return (
+                    <Contact
+                        key={contact.id} 
+                        contact={contact}
+                    />
+                );
             })
         }
+        <Link to='/contacts/add'>
+            <ContactAddButton />
+        </Link>
     </div>
 );
 

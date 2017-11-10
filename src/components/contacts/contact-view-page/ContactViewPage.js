@@ -96,12 +96,11 @@ class ContactViewPagePresentation extends Component {
             </div>
         );
     }
-            
 };
 
-// ContactViewPagePresentation.propTypes = {
-//     contact: PropTypes.object
-// }
+ContactViewPagePresentation.propTypes = {
+    contact: PropTypes.object
+}
 
 const ContactViewPage = connect(
     mapStateToProps,

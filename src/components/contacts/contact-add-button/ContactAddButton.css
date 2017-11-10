@@ -1,0 +1,23 @@
+@value secondary_color from '../../../variables.css';
+@value font_size_xlarge from '../../../variables.css';
+
+#contact-add-button {
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    color: white;
+    background: secondary_color;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-add-button p {
+    font-size: font_size_xlarge;
+    vertical-align: middle;
+}
