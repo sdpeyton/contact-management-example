@@ -33,15 +33,15 @@ const contacts = (state = [], action) => {
         // inputs in the action are the type and the contact id, which is
         // used to query the list of contacts
         case 'CONTACT_DELETE':
-            var contacts = Object.assign({}, state);
-            var contact_index = _.findIndex(contacts, contact => contact.id === id);
+            var contacts = state.map(contact => Object.assign({}, contact));
+            var contact_index = _.findIndex(contacts, contact => contact.id === action.id);
             contacts.splice(contact_index, 1);
             return contacts;
 
         // inputs in the action are the type and the contact id, which is
         // used to query the list of contacts
         case 'CONTACT_UPDATE':
-            var contacts = Object.assign({}, state);
+            var contacts = state.map(contact => Object.assign({}, contact));
             var contact_index = _.findIndex(contacts, contact => contact.id === action.contact.id);
             contacts.splice(contact_index, 1, action.contact);
             return contacts;
@@ -49,7 +49,6 @@ const contacts = (state = [], action) => {
         // inputs in the action are the type and the field to sort the list
         // of contacts by
         case 'CONTACTS_SORT':
-            console.error('sorting contacts');
             return _.sortBy(state, contact => contact[action.sort_by]);
 
         default:

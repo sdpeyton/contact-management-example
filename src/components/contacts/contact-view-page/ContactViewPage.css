@@ -11,6 +11,10 @@
     justify-content: space-between;   
 }
 
+.contact-view-option:first-child {
+    margin-top: 7.5rem;
+}
+
 .contact-view-option h3 {
     font-size: font_size_medium;
 }
