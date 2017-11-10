@@ -12,9 +12,8 @@ In order to run the application, please follow these steps:
 
 5. To view the production version locally (for testing), run ```npm start-server-only``` to start the api and ```http-server``` to start the front-end application on port 8080. Please note that running the application in production will require a re-implementation of the api.
 
-Instructions:
 
-
+INFORMATION BUILD IN TO CREATE-REACT-APP:
 
 Below is the standard information provided with a project bootstrapped with Create React App.
 
